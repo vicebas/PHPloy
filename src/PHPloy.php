@@ -409,7 +409,7 @@ class PHPloy
                     $options['pass'] = $this->getPasswordFromIniFile($name);
                 } else {
                     fwrite(STDOUT, 'No password has been provided for user "'.$options['user'].'". Please enter a password: ');
-                    $input = urlencode($this->getPassword());
+                    $input = $this->getPassword(); //urlencode($this->getPassword());
 
                     if ($input == '') {
                         $this->cli->lightGreen()->out('You entered an empty password. Continuing deployment anyway ...');
